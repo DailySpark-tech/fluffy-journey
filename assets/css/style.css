@@ -20,9 +20,10 @@ body {
 
   transition:
     transform 0.25s ease,
-    opacity 0.25s ease;
-}
+    color 0.25s ease;
 
+  overflow: hidden; /* important */
+}
 .pattern-card::after {
   content: "";
   position: absolute;
@@ -31,13 +32,17 @@ body {
   background-color: #0f0f0f;
   opacity: 0;
 
-  pointer-events: none;
-
   transition: opacity 0.35s ease;
-}
 
+  z-index: 0;          /* 👈 behind content */
+  pointer-events: none;
+}
+.pattern-card > * {
+  position: relative;
+  z-index: 1;
+}
 .pattern-card.exiting::after {
-  opacity: .5;
+  opacity: 1;
 }
 
 .pattern-card.exiting {
