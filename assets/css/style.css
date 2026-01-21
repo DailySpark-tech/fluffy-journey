@@ -12,21 +12,35 @@ body {
 }
 
 .pattern-card {
+  position: relative;
   cursor: pointer;
 
-  /* Explicit starting colors */
   background-color: #ffffff;
-  color: inherit;
+  color: #111111;
 
-  /* Transition MUST live here */
   transition:
-    background-color 0.35s ease,
-    color 0.35s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.pattern-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-color: #0f0f0f;
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.35s ease;
+}
+
+.pattern-card.exiting::after {
+  opacity: 1;
 }
 
 .pattern-card.exiting {
-  background-color: #0f0f0f;
   color: #eaeaea;
   transform: scale(0.97);
 }
