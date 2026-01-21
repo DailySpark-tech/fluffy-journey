@@ -38,6 +38,7 @@ body {
 
 .pattern-card.exiting::after {
   opacity: .5;
+  color: #eaeaea;
 }
 
 .pattern-card.exiting {
