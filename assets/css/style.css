@@ -12,11 +12,13 @@ body {
 }
 
 .pattern-card {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
-.pattern-card .exiting {
-  opacity: 0.6;
-  transform: scale(0.98);
+
+.pattern-card.exiting {
+  opacity: 0.65;
+  transform: scale(0.97);
 }
 
 .container {
