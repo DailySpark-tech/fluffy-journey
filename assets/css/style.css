@@ -145,7 +145,7 @@ nav a:hover {
   text-align: center;
   font-size: 14px;
   color: #6b7280;
-  gap: 18px;
+  display: flex;
 }
 .site-footer a {
   text-decoration: none;
