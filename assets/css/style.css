@@ -16,7 +16,7 @@ body {
   cursor: pointer;
 
   background-color: #ffffff;
-  color: #111111;
+  color: inherit;
 
   transition:
     transform 0.25s ease,
