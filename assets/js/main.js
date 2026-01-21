@@ -104,13 +104,17 @@ function initMobileHeaderAdSwap() {
 
 
   document.querySelectorAll('.pattern-card').forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.add('exiting');
+    card.addEventListener('click', () => {
+      const url = card.dataset.href;
+      if (!url) return;
 
-    setTimeout(() => {
-      window.location.href = card.dataset.href;
-    }, 300);
+      card.classList.add('exiting');
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 250);
+    });
   });
-});
+
 
 
