@@ -13,12 +13,16 @@ body {
 
 .pattern-card {
   cursor: pointer;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .pattern-card.exiting {
-  opacity: 0.65;
-  transform: scale(0.97);
+  opacity: 0.55;
+  transform: scale(0.96);
+  box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.15) inset;
 }
 
 .container {
