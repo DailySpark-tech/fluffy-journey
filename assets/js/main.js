@@ -116,5 +116,10 @@ function initMobileHeaderAdSwap() {
     });
   });
 
+// clean re-entry
+window.addEventListener('pageshow', () => {
+  document.querySelectorAll('.pattern-card.exiting')
+    .forEach(card => card.classList.remove('exiting'));
+});
 
 
