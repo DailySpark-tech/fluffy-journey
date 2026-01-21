@@ -147,6 +147,12 @@ nav a:hover {
   color: #6b7280;
 }
 
+.site-footer a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 15px;
+}
+
 /* =========================
    RESPONSIVE LAYOUT
 ========================= */
