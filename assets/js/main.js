@@ -112,7 +112,7 @@ function initMobileHeaderAdSwap() {
 
       setTimeout(() => {
         window.location.href = url;
-      }, 250);
+      }, 300);
     });
   });
 
