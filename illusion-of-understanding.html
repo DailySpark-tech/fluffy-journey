@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <title>The Illusion of Understanding Pattern</title>
 
-  <meta property="og:title" content="Which Pattern Is Controlling Your Understanding?" />
-  <meta property="og:description" content="This didn’t feel like a quiz. It exposed something I thought I understood." />
+  <!-- Social preview -->
+  <meta property="og:title" content="Do You Understand — Or Just Recognize?" />
+  <meta property="og:description" content="This showed how easily familiarity pretends to be understanding." />
   <meta property="og:type" content="website" />
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -18,41 +19,35 @@
       margin: 0;
       padding: 0;
     }
-
     .container {
       max-width: 720px;
       margin: 0 auto;
       padding: 32px 20px;
     }
-
     h1 {
       font-size: 22px;
       font-weight: 600;
       margin-bottom: 24px;
     }
-
     .progress {
       height: 3px;
       background: #222;
       margin-bottom: 32px;
+      overflow: hidden;
     }
-
     .progress-bar {
       height: 100%;
       width: 0%;
       background: #6a6a6a;
       transition: width 0.3s ease;
     }
-
     .question {
       margin-bottom: 32px;
     }
-
     .question p {
       font-size: 18px;
       margin-bottom: 16px;
     }
-
     .option {
       display: block;
       padding: 12px 14px;
@@ -61,33 +56,33 @@
       border: 1px solid #2a2a2a;
       cursor: pointer;
     }
-
+    .option span {
+      display: block;
+      font-size: 14px;
+      color: #9a9a9a;
+      margin-top: 4px;
+    }
     .option:hover {
       background: #222;
     }
-
     .result {
       display: none;
       margin-top: 40px;
     }
-
     .result h2 {
       font-size: 22px;
       margin-bottom: 16px;
     }
-
     .result p {
       line-height: 1.6;
       margin-bottom: 14px;
       color: #d0d0d0;
     }
-
     .meta-line {
       font-size: 14px;
       color: #888;
       margin-top: 24px;
     }
-
     .share {
       margin-top: 30px;
       padding: 14px;
@@ -96,17 +91,16 @@
       cursor: pointer;
       text-align: center;
     }
-
-.share.secondary:hover {
-  opacity: 0.9;
-}
+    .share:hover {
+      background: #222;
+    }
   </style>
 </head>
 
 <body>
-
 <div class="container">
-  <h1>Which Pattern Is Controlling Your Understanding?</h1>
+
+  <h1>Do You Understand — Or Just Recognize?</h1>
 
   <div class="progress">
     <div class="progress-bar" id="progressBar"></div>
@@ -115,29 +109,30 @@
   <div id="quiz">
 
     <div class="question" data-score-map="0,1,2">
-      <p>When explaining something you learned, you usually:</p>
-      <div class="option">Struggle without notes</div>
-      <div class="option">Explain only the surface</div>
-      <div class="option">Explain clearly from first principles</div>
+      <p>When asked to explain something you “know,” you usually:</p>
+      <div class="option">Struggle without notes <span>I know it, but can’t reconstruct it</span></div>
+      <div class="option">Explain the surface <span>The logic fades when pressed</span></div>
+      <div class="option">Rebuild it clearly <span>I can explain it from first principles</span></div>
     </div>
 
-    <div class="question" data-score-map="2,0,1">
-      <p>If someone keeps asking “why?”, you would feel:</p>
-      <div class="option">Comfortable</div>
-      <div class="option">Exposed</div>
-      <div class="option">Slightly unsure</div>
+    <div class="question" data-score-map="0,2,1">
+      <p>If someone keeps asking “why?”, you feel:</p>
+      <div class="option">Exposed <span>I hit a wall quickly</span></div>
+      <div class="option">Comfortable <span>I can trace the logic deeper</span></div>
+      <div class="option">Slightly unsure <span>I can go some distance, then stall</span></div>
     </div>
 
     <div class="question" data-score-map="1,2,0">
-      <p>After consuming educational content, you usually:</p>
-      <div class="option">Feel clearer than before</div>
-      <div class="option">Can rebuild the idea on your own</div>
-      <div class="option">Feel informed but stuck</div>
+      <p>After learning something new, you can usually:</p>
+      <div class="option">Recognize it later <span>It feels familiar, not usable</span></div>
+      <div class="option">Rebuild it alone <span>No reference needed</span></div>
+      <div class="option">Recall parts <span>But not the structure</span></div>
     </div>
 
   </div>
 
   <div class="result" id="result"></div>
+
 </div>
 
 <script>
@@ -175,30 +170,30 @@
 
     if (score <= 2) {
       html = `
-        <h2>You are in the Illusion of Understanding Pattern.</h2>
-        <p>You recognize concepts faster than you can reconstruct them.</p>
-        <p>Familiarity feels like mastery.</p>
-        <p>This pattern is common among people who consume explanations.</p>
-        <p><strong>Most people here overestimate their depth.</strong></p>
+        <h2>You are inside the Illusion of Understanding Pattern.</h2>
+        <p>You recognize ideas faster than you can reconstruct them.</p>
+        <p>Familiarity substitutes for comprehension.</p>
+        <p>This pattern feels like intelligence.</p>
+        <p><strong>It isn’t.</strong></p>
       `;
     } else if (score <= 4) {
       html = `
         <h2>You are in the Partial Clarity Pattern.</h2>
-        <p>You understand fragments, but gaps remain.</p>
-        <p>Clarity appears close, but isn’t stable yet.</p>
-        <p><strong>Many people here believe it will “click soon.”</strong></p>
+        <p>You understand pieces, not systems.</p>
+        <p>Clarity appears close, but collapses under pressure.</p>
+        <p><strong>Most people here believe they’re almost done.</strong></p>
       `;
     } else {
       html = `
         <h2>You are in the Structural Understanding Pattern.</h2>
-        <p>You can rebuild ideas from first principles.</p>
-        <p>Confusion doesn’t threaten your momentum.</p>
-        <p><strong>This pattern is less common than people assume.</strong></p>
+        <p>You can rebuild ideas without reference.</p>
+        <p>Confusion signals missing structure — not failure.</p>
+        <p><strong>This pattern is rare.</strong></p>
       `;
     }
 
     html += `
-      <p class="meta-line">People who see this result usually disagree with at least one part of it.</p>
+      <p class="meta-line">People who see this result often rethink how they define “understanding.”</p>
       <div class="share" onclick="share()">Share this pattern</div>
     `;
 
@@ -207,16 +202,10 @@
   }
 
   function share() {
-    const text = `This didn’t feel like a quiz.
-
-It exposed something I thought I understood.
-
-Check which pattern you’re in: ${location.href}`;
-
+    const text = `This showed how easily familiarity pretends to be understanding.\n\nCheck which pattern you’re in:\n${location.href}`;
     navigator.clipboard.writeText(text);
     alert('Share text copied.');
   }
-  
 </script>
 
 </body>
