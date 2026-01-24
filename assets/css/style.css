@@ -168,6 +168,8 @@ nav a:hover {
 }
 
 .cta-pt {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .patterns {
