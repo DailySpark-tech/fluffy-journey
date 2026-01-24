@@ -167,6 +167,14 @@ nav a:hover {
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
+.cta-pt {
+  justify-content: space-between;
+}
+.patterns {
+  font-size: 12px;
+  opacity: .5;
+}
+
 /* Hover */
 .tool-card:hover {
   transform: translateY(-4px);
