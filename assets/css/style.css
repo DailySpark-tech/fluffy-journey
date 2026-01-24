@@ -173,6 +173,7 @@ nav a:hover {
   justify-content: space-between;
 }
 .patterns {
+  margin-top: 1.2rem;
   font-size: 12px;
   opacity: .5;
 }
